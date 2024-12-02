@@ -15,17 +15,9 @@ const app = express();
 // create the http server
 const server = http.createServer(app);
 
-// pass a path (e.g., "/") and a callback function to the get method
-//  when the client makes an HTTP GET request to the specified path,
-//  the callback function is executed
-app.get("/", (req, res) => {
-  // the req parameter references the HTTP request object, which
-  //    contains the request details (a number of properties and methods)
-  console.log("path: " + req.path);
-  // send a response to the client
-  // the res parameter references the HTTP response object
-  res.send("Good morning");
-});
+// to keep this file manageable, we will move the routes to a separate file
+// the exported router object is an example of middleware
+app.use("/", require("./server/routes/router"));
 
 // start the server, listening on port 8080
 server.listen(8080, () => {
