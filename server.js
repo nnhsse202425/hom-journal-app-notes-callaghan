@@ -15,6 +15,11 @@ const app = express();
 // set the template engine to EJS, which generates HTML with embedded javascript
 app.set("view engine", "ejs");
 
+// load assets
+app.use("/css", express.static("assets/css"));
+app.use("/img", express.static("assets/img"));
+app.use("/js", express.static("assets/js"));
+
 // create the http server
 const server = http.createServer(app);
 
