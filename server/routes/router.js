@@ -10,7 +10,7 @@ route.get("/", (req, res) => {
   console.log("path: " + req.path);
   // send a response to the client
   // the res parameter references the HTTP response object
-  res.send("Good morning!");
+  res.render("index");
 });
 
 module.exports = route;

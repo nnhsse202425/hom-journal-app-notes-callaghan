@@ -12,6 +12,9 @@ const express = require("express");
 // invoke the express function to create an Express application
 const app = express();
 
+// set the template engine to EJS, which generates HTML with embedded javascript
+app.set("view engine", "ejs");
+
 // create the http server
 const server = http.createServer(app);
 
