@@ -13,4 +13,9 @@ route.get("/", (req, res) => {
   res.render("index");
 });
 
+// route for createEntry
+route.get("/createEntry", (req, res) => {
+  res.render("createEntry");
+});
+
 module.exports = route;
