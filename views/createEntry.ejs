@@ -14,7 +14,19 @@
 
   <div>
     <label>Date <input type="date" class="date" /></label>
-    <label> Habit of Mind <input type="text" class="HoM" /></label>
+    <fieldset>
+      <legend>Habit of Mind:</legend>
+      <% for(let habit of habits) { ; %>
+      <label
+        ><input
+          type="radio"
+          class="habit"
+          name="habits"
+          value="<%= habit %>"
+        /><%= habit %></label
+      >
+      <% } %>
+    </fieldset>
     <label>
       Journal Entry <textarea class="content">my journal entry</textarea>
     </label>
